@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap");
+
+/* All your mobile-first styles here */
+body {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 2rem;
+  color: #222;
+  background-color: #eabfb9;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  border: 2px solid #222;
+  outline: 2px solid #222;
+  outline-offset: 1.2rem;
+}
+
+h1 {
+  font-size: 4rem;
+  letter-spacing: 1px;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 2.4rem;
+}
+
+.weather {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap */
+  gap: 1.2rem;
+  justify-content: center; /* Centers items */
+}
+
+.day {
+  background-color: #f0d2ce;
+  padding: 1.6rem 0 2rem;
+  width: calc(50% - 0.6rem); /* Adjust width for two items per row */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+input {
+  /* ... your existing styles ... */
+  font-family: inherit;
+  color: inherit;
+  font-size: 2rem;
+  background-color: #f0d2ce;
+  padding: 1.6rem 3.2rem;
+  border: none;
+  
+  /* Change the fixed width to a responsive percentage */
+  width: 90%; 
+  
+  /* Add max-width to prevent it from getting too big on desktop */
+  max-width: 32rem;
+
+  /* ... your existing new styles ... */
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none; /* Removes the default outline */
+  box-shadow: 0 0 0 3px #222; /* Creates a clean focus outline */
+}
+
+input::placeholder {
+  color: #888; /* Styles the placeholder text */
+  font-style: italic;
+}
+
+/* Desktop styles applied for screens wider than 768px */
+/* Update the existing min-width media query */
+@media (min-width: 768px) {
+  /* Remove vertical centering on the body */
+  body {
+    height: auto; /* Allow the body to take up only the height of its content */
+    display: block; /* Revert to a standard block display */
+  }
+
+  /* Center the app container horizontally on the page */
+  .app {
+    max-width: 112rem;
+    width: 90%;
+    gap: 4rem;
+    padding: 6rem 0;
+    margin: 4rem auto; /* Add margin to the top and center horizontally */
+  }
+
+  h1 {
+    font-size: 6rem;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+  }
+  h2 {
+  text-align: center;
+  margin-bottom: 2.4rem;
+}
+
+  .weather {
+    gap: 2.4rem;
+  }
+
+  .day {
+    width: 12.8rem;
+    gap: 1.2rem;
+  }
+}
+
+
+/*  { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 2rem;
+  height: 100vh;
+  color: #222;
+  background-color: #eabfb9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 112rem;
+  gap: 4rem;
+  padding: 6rem 0;
+  border: 2px solid #222;
+  outline: 2px solid #222;
+  outline-offset: 1.2rem;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 6rem;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2.4rem;
+}
+
+input {
+  font-family: inherit;
+  color: inherit;
+  font-size: 2rem;
+  background-color: #f0d2ce;
+  padding: 1.6rem 3.2rem;
+  border: none;
+  width: 32rem;
+}
+
+input:focus {
+  outline: 2px solid #222;
+}
+
+.weather {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.day {
+  background-color: #f0d2ce;
+  padding: 1.6rem 0 2rem;
+  width: 12.8rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  cursor: pointer;
+}
+
+.day span {
+  font-size: 5.2rem;
+}
+
+.day.important {
+  background-color: #ecc5c0;
+  outline: 2px solid #222;
+}
+
+.loader {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .weather {
+    flex-wrap: wrap; /* This allows items to wrap to a new line */
+
